@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV MAX - Projeto 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <aside id="sidebar">
+    <h2>📺 IPTV <span class="highlight">MAX</span></h2>
+    <input type="text" id="search" placeholder="Buscar canal..." />
+    <ul id="group-list"></ul>
+  </aside>
+
+  <main id="main-content">
+    <header>
+      <h1 id="current-title">Selecione um canal</h1>
+    </header>
+    <section id="player-section">
+      <video id="video" controls autoplay></video>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
