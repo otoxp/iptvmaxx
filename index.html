@@ -9,9 +9,33 @@
 </head>
 <body>
 
+    <div id="setupScreen" class="setup-overlay">
+        <div class="setup-box">
+            <h2>📺 Carregar Lista IPTV</h2>
+            <p>Escolha como deseja carregar seus canais:</p>
+            
+            <div class="option-group">
+                <label class="btn-primary">
+                    📂 Carregar Arquivo .M3U do Computador
+                    <input type="file" id="fileInput" accept=".m3u,.m3u8" style="display:none;">
+                </label>
+                <small>Melhor opção: Mais rápido e sem erros.</small>
+            </div>
+
+            <div class="divider">OU</div>
+
+            <div class="option-group">
+                <input type="text" id="urlInput" placeholder="Cole o link da lista (http://...)">
+                <button onclick="loadFromUrl()" class="btn-secondary">Carregar via Link</button>
+                <small>Requer Proxy se o link tiver bloqueio.</small>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="logo-area">
             <span>IPTV Maxx</span>
+            <button onclick="resetApp()" class="btn-reset">Trocar Lista</button>
         </div>
         <div class="status-area">Online</div>
     </header>
@@ -21,28 +45,29 @@
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Buscar canal...">
             </div>
-            <ul class="channel-list" id="channelList">
-                </ul>
+            <ul class="channel-list" id="channelList"></ul>
         </aside>
 
         <main class="main-player">
             <div class="channel-info-header" id="currentChannelTitle">
-                <img src="" id="currentLogo" style="display:none;">
+                <img src="" id="currentLogo">
                 <span>Selecione um canal</span>
             </div>
+            
             <video id="video" controls></video>
+
+            <div id="programDetails" class="program-details">
+                <h2 id="progTitle">Bem-vindo</h2>
+                <p id="progDesc">Selecione um canal para assistir e ver os detalhes da programação.</p>
+                <div id="progTime" class="prog-time-badge">--:--</div>
+            </div>
         </main>
 
         <aside class="sidebar-right">
             <div class="epg-header">Guia de Programação</div>
             <div id="epgContainer">
-                <div class="epg-item current">
-                    <div class="epg-time">Agora</div>
-                    <div class="epg-title">Programação ao Vivo</div>
-                </div>
-                <div class="epg-item">
-                    <div class="epg-time">A seguir</div>
-                    <div class="epg-title">Próximo Programa</div>
+                <div style="padding:20px; color:#666; text-align:center;">
+                    Carregue uma lista para ver o guia.
                 </div>
             </div>
         </aside>
