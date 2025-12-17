@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV MAX - Projeto 2</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Maxx Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside id="sidebar">
-    <h2>📺 IPTV <span class="highlight">MAX</span></h2>
-    <input type="text" id="search" placeholder="Buscar canal..." />
-    <ul id="group-list"></ul>
-  </aside>
 
-  <main id="main-content">
     <header>
-      <h1 id="current-title">Selecione um canal</h1>
+        <div class="logo-area">
+            <span>IPTV Maxx</span>
+        </div>
+        <div class="status-area">Online</div>
     </header>
-    <section id="player-section">
-      <video id="video" controls autoplay></video>
-    </section>
-  </main>
 
-  <script src="app.js"></script>
+    <div class="container">
+        <aside class="sidebar-left">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar canal...">
+            </div>
+            <ul class="channel-list" id="channelList">
+                </ul>
+        </aside>
+
+        <main class="main-player">
+            <div class="channel-info-header" id="currentChannelTitle">
+                <img src="" id="currentLogo" style="display:none;">
+                <span>Selecione um canal</span>
+            </div>
+            <video id="video" controls></video>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="epg-header">Guia de Programação</div>
+            <div id="epgContainer">
+                <div class="epg-item current">
+                    <div class="epg-time">Agora</div>
+                    <div class="epg-title">Programação ao Vivo</div>
+                </div>
+                <div class="epg-item">
+                    <div class="epg-time">A seguir</div>
+                    <div class="epg-title">Próximo Programa</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
