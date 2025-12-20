@@ -1,6 +1,6 @@
 // --- Configurações ---
 const PROXY = "https://corsproxy.io/?";
-const EPG_URL = "https://tinyurl.com/4uxff8vd"; 
+const EPG_URL = "https://tinyurl.com/2dy3oonf"; 
 
 // Elementos da DOM
 const setupScreen = document.getElementById('setupScreen');
